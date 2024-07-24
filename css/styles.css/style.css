@@ -1,0 +1,272 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  background-color: linear-gradient(135deg, #F8BFBF 0%, #EE8B8B 100%);
+}
+
+.grid {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-radius: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+header {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0;
+  padding: 2rem 8rem;
+  border-radius: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+
+.model-img {
+  grid-column: 8/13;
+  grid-row: 1/2;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.base-apparel-content {
+  max-width: 445px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  grid-column: 2/7;
+  grid-row: 1/2;
+}
+
+.bg-pattern {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+}
+
+.base-apparel-content h1 span {
+  color: hsl(0, 36%, 70%);
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 64px;
+  font-family: "Josefin Sans";
+  letter-spacing: 1.0625rem;
+}
+
+.base-apparel-content h1 {
+  color: hsl(0, 7%, 24%);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 71px;
+  font-family: "Josefin Sans";
+  letter-spacing: 1.0625rem;
+}
+
+.base-apparel-content p {
+  color: hsl(0, 36%, 70%);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "Josefin Sans";
+  letter-spacing: normal;
+}
+
+.base-apparel-content form {
+  max-width: 445px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.form-input {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  color: hsl(0, 7%, 24%);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "Josefin Sans";
+  letter-spacing: normal;
+  max-width: 445px;
+  width: 100%;
+  margin: 0;
+  padding: 1rem 2rem;
+  border-radius: 28px;
+  border: 1px solid hsl(0, 36%, 70%);
+}
+
+.form-button {
+  background-color: hsl(0, 74%, 74%);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  grid-column: 4/5;
+  grid-row: 1/2;
+}
+
+.form-button img {
+  margin: 0 auto;
+}
+
+.base-apparel-content form input::-moz-placeholder {
+  color: hsl(0, 36%, 70%);
+  opacity: 0.5;
+}
+
+.base-apparel-content form input::placeholder {
+  color: hsl(0, 36%, 70%);
+  opacity: 0.5;
+}
+
+#error-message {
+  color: hsl(0, 92%, 68%);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 28px;
+  font-family: "Josefin Sans";
+  letter-spacing: normal;
+  display: none;
+  grid-column: 1/5;
+  grid-row: 2/3;
+  padding-inline-start: 1rem;
+}
+
+.error-message.active {
+  display: block;
+}
+
+#error-img {
+  grid-row: 1/2;
+  grid-column: 3/4;
+  display: none;
+  margin: 0 auto;
+  align-self: center;
+}
+
+.error-img.active {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    max-width: 445px;
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    border-radius: 0;
+  }
+  .model-img {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    padding-inline: 2rem;
+    margin: 0 auto;
+  }
+  .base-apparel-content {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    padding-block-start: 5rem;
+    padding-inline: 2rem;
+    margin: 0 auto;
+  }
+  .base-apparel-content h1 span, .base-apparel-content h1, .base-apparel-content p {
+    text-align: center;
+  }
+  .base-apparel-content form {
+    padding-block: 3rem;
+  }
+}/*# sourceMappingURL=style.css.map */
